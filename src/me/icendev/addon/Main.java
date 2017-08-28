@@ -1,7 +1,7 @@
 package me.icendev.addon;
 
 
-import me.icendev.addon.Shop.Commands.Withdraw;
+import me.icendev.addon.IceShards.Commands.Withdraw;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
@@ -10,8 +10,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
-
-import static org.bukkit.Bukkit.getServer;
 
 public class Main extends JavaPlugin{
 
@@ -27,7 +25,9 @@ public class Main extends JavaPlugin{
     public ItemStack createItem(ItemStack item, String name, String[] lore) {
         ItemMeta im = item.getItemMeta();
         im.setDisplayName(name);
-        im.setLore(Arrays.asList(lore));
+        if(lore != null){
+            im.setLore(Arrays.asList(lore));
+        }
         item.setItemMeta(im);
         return item;
     }
