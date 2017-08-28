@@ -1,0 +1,8 @@
+name: IceNAddon
+author: IceNdev
+version: 1.0
+main: me.icendev.addon.Main
+description: IceN Plugin
+commands:
+  coins:
+    description: coins
